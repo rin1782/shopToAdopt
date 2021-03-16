@@ -2,8 +2,10 @@
 
 one:
   msg: MyString
-  saves: MyString
+  saves: 1
+  foster_id: 1
 
 two:
   msg: MyString
-  saves: MyString
+  saves: 1
+  foster_id: 1

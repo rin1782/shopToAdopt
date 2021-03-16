@@ -1,10 +1,12 @@
 class Api::V1::InquiriesController < ApplicationController
-    before_action :find_inquiry, only: [:update]
+    before_action :find_inquiry, only: [:update, :create]
 
   def index
     @inquiries = Inquiry.all
     render json: @inquiries
   end
+
+  def
 
   def update
     @inquiry.update(inquiry_params)
