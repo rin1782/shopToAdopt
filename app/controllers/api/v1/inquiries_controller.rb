@@ -6,7 +6,9 @@ class Api::V1::InquiriesController < ApplicationController
     render json: @inquiries
   end
 
-  def
+  def create
+    @inquiry = Inquiry.create
+  end
 
   def update
     @inquiry.update(inquiry_params)
