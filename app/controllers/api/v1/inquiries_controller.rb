@@ -7,7 +7,10 @@ class Api::V1::InquiriesController < ApplicationController
   end
 
   def create
-    @inquiry = Inquiry.create
+    inquiry = Inquiry.new
+    inquiry.msg = params[:msg]
+    inquiry.saves = params[:saves]
+    inquiry.save
   end
 
   def update

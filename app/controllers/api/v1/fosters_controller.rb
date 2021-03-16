@@ -1,5 +1,4 @@
 class Api::V1::FostersController < ApplicationController
-    before_action :find_foster, only: [:index, :show]
 
     def index
         @fosters = Foster.all
