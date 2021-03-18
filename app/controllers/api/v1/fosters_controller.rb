@@ -5,6 +5,5 @@ class Api::V1::FostersController < ApplicationController
         render json: @fosters
     end
 
-    def show
-    end
+    
 end

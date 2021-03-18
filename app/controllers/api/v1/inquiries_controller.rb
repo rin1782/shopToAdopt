@@ -1,5 +1,5 @@
 class Api::V1::InquiriesController < ApplicationController
-    before_action :find_inquiry, only: [:update, :create]
+   before_action :find_inquiry, only: [:update, :create]
 
   def index
     @inquiries = Inquiry.all
@@ -29,6 +29,6 @@ class Api::V1::InquiriesController < ApplicationController
   end
 
   def find_inquiry
-    @inquiry = Inquiry.find(params[:id])
+    @inquiry = Inquiry.find(params[:foster_id])
   end
 end
