@@ -1,16 +1,19 @@
 class Api::V1::InquiriesController < ApplicationController
-   before_action :find_inquiry, only: [:update, :create]
+   before_action :find_inquiry, only: [:update, :create, :index, :show]
 
   def index
     @inquiries = Inquiry.all
     render json: @inquiries
   end
 
+  def show
+    @inquiry = Inquiry.find_by_foster_id(params[:id])
+  end
+
   def create
-    inquiry = Inquiry.new
-    inquiry.msg = params[:msg]
-    inquiry.saves = params[:saves]
-    inquiry.save
+    @inquiry = Inquiry.create(inquiry_params)
+    if @inquiry.save 
+      render json: @inquiry
   end
 
   def update
