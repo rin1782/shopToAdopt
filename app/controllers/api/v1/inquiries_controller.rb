@@ -8,6 +8,7 @@ class Api::V1::InquiriesController < ApplicationController
 
   def show
     @inquiry = Inquiry.find_by_foster_id(params[:id])
+    render json: @inquiry
   end
 
   def create
