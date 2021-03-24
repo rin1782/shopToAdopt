@@ -1,3 +1,3 @@
 class Foster < ApplicationRecord
-    has_many :inquiries
+    belongs_to :user
 end
