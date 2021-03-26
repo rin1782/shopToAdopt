@@ -4,12 +4,10 @@ one:
   name: MyString
   img: MyString
   desc: MyString
-  available: false
   user_id: 1
 
 two:
   name: MyString
   img: MyString
   desc: MyString
-  available: false
   user_id: 1
