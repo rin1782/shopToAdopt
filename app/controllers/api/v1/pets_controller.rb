@@ -1,5 +1,5 @@
 class Api::V1::PetsController < ApplicationController
-  # before_action :set_pet, only: [:show, :update, :destroy]
+   before_action :set_pet, only: [:show, :create, :update]
 
   # GET /pets
   def index
@@ -46,6 +46,6 @@ class Api::V1::PetsController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def pet_params
-      params.require(:pet).permit(:name, :desc, :img, :user_id)
+      params.require(:pet).permit(:id, :name, :desc, :img, :user_id)
     end
 end
