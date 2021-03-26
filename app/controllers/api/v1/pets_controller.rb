@@ -26,7 +26,7 @@ class PetsController < ApplicationController
 
     private
     def pet_params
-        params.require(:pets).permit(:name, :img, :desc, :available :user_id) # these attributes should be in body of fetch request
+        params.require(:pets).permit(:name, :img, :desc, :user_id) # these attributes should be in body of fetch request
     end
 
 end

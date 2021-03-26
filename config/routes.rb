@@ -3,7 +3,7 @@
     namespace :api do
       namespace :v1 do
         resources :users, only: [:index, :show] 
-        resources :fosters, only: [:create, :show, :index]
+        resources :pets, only: [:create, :show, :index, :update]
       end
     end
   end
