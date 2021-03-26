@@ -1,5 +1,4 @@
-Foster.destroy_all
-Inquiry.destroy_all
+
 
 fos2 = Foster.create(name: "Judge", age: 4, img: "https://www.petmd.com/sites/default/files/styles/article_image/public/petmd-puppy-weight.jpg?itok=IwMOwGSX")
 fos3 = Foster.create(name: "Bailey", age: 2, img: "https://www.readersdigest.ca/wp-content/uploads/2013/03/6-facts-to-know-before-owning-a-puppy.jpg")

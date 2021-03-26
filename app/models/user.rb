@@ -1,3 +1,3 @@
 class User < ApplicationRecord
-    has_many :fosters
+    has_many :pets
 end

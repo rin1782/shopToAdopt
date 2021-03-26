@@ -10,19 +10,19 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_03_24_190006) do
+ActiveRecord::Schema.define(version: 2021_03_26_023537) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
-  create_table "fosters", force: :cascade do |t|
+  create_table "pets", force: :cascade do |t|
     t.string "name"
-    t.integer "age"
     t.string "img"
+    t.string "desc"
+    t.boolean "available"
+    t.integer "user_id"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-    t.integer "foster_id"
-    t.index ["foster_id"], name: "index_fosters_on_foster_id"
   end
 
   create_table "users", force: :cascade do |t|
