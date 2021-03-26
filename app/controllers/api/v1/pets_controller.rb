@@ -1,32 +1,51 @@
-class Api::V1::PetsController < ApplicationRecord
-    def index
-        pets = Pet.all
-        render json: pets
+class Api::V1::PetsController < ApplicationController
+  # before_action :set_pet, only: [:show, :update, :destroy]
+
+  # GET /pets
+  def index
+    @pets = Pet.all
+
+    render json: @pets
+  end
+
+  # GET /pets/1
+  def show
+    render json: @pet
+  end
+
+  # POST /pets
+  def create
+    @pet = Pet.new(pet_params)
+
+    if @pet.save
+      render json: @pet, status: :created, location: @pet
+    else
+      render json: @pet.errors, status: :unprocessable_entity
+    end
+  end
+
+  # PATCH/PUT /pets/1
+  def update
+    if @pet.update(pet_params)
+      render json: @pet
+    else
+      render json: @pet.errors, status: :unprocessable_entity
+    end
+  end
+
+  # DELETE /pets/1
+  def destroy
+    @pet.destroy
+  end
+
+  private
+    # Use callbacks to share common setup or constraints between actions.
+    def set_pet
+      @pet = Pet.find(params[:id])
     end
 
-    # def show
-    #     pet = Pet.find_by(id: params[:id])
-    #     render json: PetSerializer.new(pet)
-    # end
-
-    # def create
-    #     pet = Pet.new(pet_params)
-    #     if pet.save
-    #         render json: PetSerializer.new(pet), status: :accepted
-    #     else
-    #         render json: {errors: pet.errors.full_messages}, status: :unprocessable_entity
-    #     end
-    # end
-
-    # def update
-    #     pet = Pet.find_by(id: params[:id])
-    #     pet = pet.update(pet_params)
-    #     render json: PetSerializer.new(pet), status: :accepted
-    # end
-
-    # private
-    # def pet_params
-    #     params.require(:pets).permit(:name, :img, :desc, :user_id) # these attributes should be in body of fetch request
-    # end
-
+    # Only allow a list of trusted parameters through.
+    def pet_params
+      params.require(:pet).permit(:name, :desc, :img, :user_id)
+    end
 end
