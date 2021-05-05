@@ -5,7 +5,7 @@ class Api::V1::PetsController < ApplicationController
   def index
     @pets = Pet.all
 
-    render json: @pets
+    render json: @pets, only: [:id, :name, :desc, :img, :user_id], include: [user: {only: [:username, :user_id]}]
   end
 
   # GET /pets/1
