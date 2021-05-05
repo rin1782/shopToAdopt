@@ -1,7 +1,8 @@
 Pet.destroy_all
 User.destroy_all
 
-erin = User.create(username: "colaerin", password: "password")
+erin = User.create(username: "colaerin")
+
 
 
 Pet.create([
